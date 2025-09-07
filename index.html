@@ -3,18 +3,67 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>면접 질문 생성기 - 초간단 버전</title>
+  <title>면접 질문 생성기 - 우리 회사</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>면접 질문 생성기</h1>
-    <p class="tagline">버튼 몇 번으로 대표 질문 5개와 꼬리 질문을 보여줘요</p>
+
+  <!-- 상단 그라데이션 바 -->
+  <div class="topbar">
+    <div class="topbar__inner">
+      <div class="brand">
+        <img src="img/logo.png" alt="로고" onerror="this.style.display='none'">
+        <div class="brand__text">
+          <strong>InsightQ</strong>
+          <span>지능형 면접 질문 생성기</span>
+        </div>
+      </div>
+      <div class="badge">
+        <b>300개 전문 질문 세트</b><br>
+        <small>직무역량 + 컬처핏</small>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <h1>어떤 면접 질문이 필요하신가요?</h1>
+    <p class="hero__sub">전문가가 검증한 Sharp Question 방식의 면접 질문을 생성합니다.</p>
   </header>
 
   <main>
-    <section id="step1" class="card">
-      <h2>1) 무엇을 뽑을까요?</h2>
+    <!-- 메인 카드 두 개 -->
+    <section class="cards">
+      <button id="chooseJob" class="bigCard">
+        <div class="bigCard__icon">
+          <img src="img/icon-job.png" alt="직무 아이콘" onerror="this.style.display='none'">
+        </div>
+        <h3>직무 역량</h3>
+        <p class="muted">전문성과 기술적 깊이를 검증하는 질문</p>
+        <ul>
+          <li>IT/프로덕트 (여러 직무)</li>
+          <li>비즈니스/마케팅</li>
+          <li>경영지원/운영</li>
+        </ul>
+      </button>
+
+      <button id="chooseCulture" class="bigCard">
+        <div class="bigCard__icon alt">
+          <img src="img/icon-culture.png" alt="컬처 아이콘" onerror="this.style.display='none'">
+        </div>
+        <h3>컬처핏</h3>
+        <p class="muted">조직 문화 적합성과 핵심 가치를 검증하는 질문</p>
+        <ul>
+          <li>주도성 / 주인의식</li>
+          <li>협업 / 팀워크</li>
+          <li>성장 / 학습 등 핵심 키워드</li>
+        </ul>
+      </button>
+    </section>
+
+    <!-- 기존 생성 섹션: 선택 후 노출 -->
+    <section id="step1" class="card" hidden>
+      <h2>세부 항목을 선택하세요</h2>
+      <!-- 기존 탭은 숨김 처리 (CSS에서 display:none) -->
       <div class="tabs">
         <button class="tab active" data-type="job">직무 역량</button>
         <button class="tab" data-type="culture">컬처 핏</button>
@@ -23,7 +72,7 @@
     </section>
 
     <section id="step2" class="card" hidden>
-      <h2>2) 질문 세트</h2>
+      <h2>질문 세트</h2>
       <ol id="questionList"></ol>
       <div class="actions">
         <button id="copyBtn">복사하기</button>
@@ -33,8 +82,8 @@
     </section>
   </main>
 
-  <footer>
-    <small>Tip: 민감/차별 가능성이 있는 질문은 사용하지 마세요. (가족·출신·혼인/임신·정치·종교·건강·장애 등)</small>
+  <footer class="footer">
+    <small>민감/차별 가능 질문 금지: 가족·출신·혼인/임신·정치·종교·건강·장애 등</small>
   </footer>
 
   <script src="script.js"></script>
