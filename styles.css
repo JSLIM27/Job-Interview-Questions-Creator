@@ -1,0 +1,20 @@
+:root { --bg:#f7f7fb; --card:#ffffff; --ink:#222; --muted:#6a6a6a; --line:#eaeaea; --brand:#3a6ff8; }
+*{box-sizing:border-box}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:24px;text-align:center}
+h1{margin:0 0 8px 0}
+.tagline{color:var(--muted)}
+main{max-width:920px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
+.tabs{display:flex;gap:8px;margin:8px 0 12px}
+.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer}
+.tab.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+.options{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
+.options button{padding:12px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;text-align:left}
+.options button:hover{border-color:var(--brand)}
+ol#questionList{line-height:1.6}
+.followups{color:var(--muted);margin:6px 0 12px}
+.actions{display:flex;gap:8px;margin-top:8px}
+button#copyBtn,button#printBtn{background:var(--brand);color:#fff;border:0;padding:10px 14px;border-radius:8px}
+button.secondary{background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:8px}
+footer{max-width:920px;margin:12px auto 24px auto;padding:0 16px;color:var(--muted)}
