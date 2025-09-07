@@ -1,20 +1,84 @@
-:root { --bg:#f7f7fb; --card:#ffffff; --ink:#222; --muted:#6a6a6a; --line:#eaeaea; --brand:#3a6ff8; }
+/* ===== 브랜드 컬러만 바꾸면 전체 톤이 바뀝니다 ===== */
+:root{
+  --brand:#2f86ff;
+  --brand2:#8a5cf6;
+  --bg:#f6f8fb;
+  --ink:#1f2328;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --line:#e5e7eb;
+}
+
 *{box-sizing:border-box}
-body{margin:0;font-family:sans-serif;background:var(--bg);color:var(--ink)}
-header{padding:24px;text-align:center}
-h1{margin:0 0 8px 0}
-.tagline{color:var(--muted)}
-main{max-width:920px;margin:0 auto;padding:16px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0}
-.tabs{display:flex;gap:8px;margin:8px 0 12px}
-.tab{border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer}
-.tab.active{background:var(--brand);color:#fff;border-color:var(--brand)}
-.options{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px}
-.options button{padding:12px;border-radius:10px;border:1px solid var(--line);background:#fff;cursor:pointer;text-align:left}
-.options button:hover{border-color:var(--brand)}
+html,body{margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;background:var(--bg);color:var(--ink)}
+
+/* 상단 그라데이션 바 */
+.topbar{
+  background: linear-gradient(90deg, var(--brand), var(--brand2));
+  color:#fff;
+}
+.topbar__inner{
+  max-width:1120px; margin:0 auto; padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+}
+.brand{display:flex; align-items:center; gap:12px}
+.brand img{width:36px; height:36px; border-radius:10px; background:rgba(255,255,255,.2)}
+.brand__text strong{display:block; font-size:18px}
+.brand__text span{font-size:12px; opacity:.9}
+.badge{ text-align:right; line-height:1.2 }
+.badge b{font-size:14px}
+.badge small{opacity:.9}
+
+/* 히어로 */
+.hero{max-width:920px; margin:28px auto 8px auto; padding:0 16px; text-align:center}
+.hero h1{font-size:32px; margin:8px 0}
+.hero__sub{color:var(--muted); margin:0}
+
+/* 메인 카드 */
+.cards{
+  max-width:920px; margin:16px auto; padding:0 16px;
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;
+}
+.bigCard{
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px;
+  text-align:left; cursor:pointer; transition:transform .12s ease, box-shadow .12s ease, border .12s ease;
+}
+.bigCard:hover{ transform: translateY(-2px); box-shadow:0 8px 24px rgba(2,8,20,.08); border-color:#d7dbe3 }
+.bigCard h3{margin:6px 0 4px 0; font-size:20px}
+.bigCard .muted{color:var(--muted); margin:0 0 6px 0}
+.bigCard ul{margin:8px 0 0 18px; color:var(--muted)}
+.bigCard__icon{
+  width:56px; height:56px; border-radius:999px;
+  background: linear-gradient(135deg, #58b0ff, #3a6ff8);
+  display:grid; place-items:center; box-shadow:0 6px 20px rgba(58,111,248,.3);
+}
+.bigCard__icon.alt{
+  background: linear-gradient(135deg, #b06cff, #ff6bd6);
+  box-shadow:0 6px 20px rgba(255,107,214,.3);
+}
+.bigCard__icon img{width:28px; height:28px}
+
+/* 기존 섹션 카드 */
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px;
+  max-width:920px; margin:16px auto; padding:16px; 
+}
+.tabs{display:none} /* 탭은 숨김 (큰 카드로 대체) */
+.options{display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:10px}
+.options button{padding:12px; border:1px solid var(--line); border-radius:12px; background:#fff; cursor:pointer; text-align:left}
+.options button:hover{ border-color:#cfd6e4 }
 ol#questionList{line-height:1.6}
-.followups{color:var(--muted);margin:6px 0 12px}
-.actions{display:flex;gap:8px;margin-top:8px}
-button#copyBtn,button#printBtn{background:var(--brand);color:#fff;border:0;padding:10px 14px;border-radius:8px}
-button.secondary{background:#fff;border:1px solid var(--line);padding:10px 14px;border-radius:8px}
-footer{max-width:920px;margin:12px auto 24px auto;padding:0 16px;color:var(--muted)}
+.followups{color:var(--muted); margin:6px 0 12px}
+.actions{display:flex; gap:8px; margin-top:8px}
+button{cursor:pointer}
+button#copyBtn,button#printBtn{background:var(--brand); color:#fff; border:0; padding:10px 14px; border-radius:10px}
+button.secondary{background:#fff; border:1px solid var(--line); padding:10px 14px; border-radius:10px}
+
+/* 푸터 */
+.footer{max-width:920px; margin:8px auto 24px auto; padding:0 16px; color:var(--muted); text-align:center}
+
+/* 반응형 */
+@media (max-width:840px){
+  .cards{grid-template-columns:1fr}
+}
