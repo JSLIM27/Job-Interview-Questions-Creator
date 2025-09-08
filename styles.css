@@ -13,7 +13,11 @@
 
 /* reset-ish */
 *{box-sizing:border-box}
-html,body{margin:0;padding:0}
+html, body {
+  height: 100%;    /* 전체 화면 높이 채우기 */
+  margin: 0;
+  padding: 0;
+}
 body{
   font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-serif;
   background:var(--bg);
@@ -39,19 +43,28 @@ body{
 .badge small{opacity:.9}
 
 /* ===== 히어로(화면 가득 중앙정렬) ===== */
-.hero{
-  min-height:100vh; /* 화면 가득 */
-  display:flex; align-items:center; justify-content:center;
-  text-align:center;
+.hero {
+  min-height: calc(100vh - 80px); /* 상단바 높이 제외한 나머지 화면 전체 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
 }
 .container{max-width:1024px;margin:0 auto;padding:0 16px}
 .hero h1{font-size:40px;margin:12px 0 6px 0}
 .hero__sub{color:var(--muted);margin:0 0 24px 0}
 
 /* ===== 메인 카드 2개 ===== */
-.cards{
-  margin:10px auto 18px auto;
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px;
+.cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 32px;
+  max-width: 800px;   /* 카드 두 개가 너무 퍼지지 않게 */
+  margin-left: auto;
+  margin-right: auto;
 }
 .bigCard{
   background:var(--card); border:1px solid var(--line); border-radius:18px; padding:22px;
@@ -137,3 +150,4 @@ button.secondary{
   .cards{grid-template-columns:1fr; gap:16px}
   .hero h1{font-size:32px}
 }
+
