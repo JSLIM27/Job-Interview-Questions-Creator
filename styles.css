@@ -99,3 +99,15 @@ button.secondary{background:#fff; border:1px solid var(--line); padding:10px 14p
   .cards{grid-template-columns:1fr}
 }
 
+/* ===== 전환 애니메이션 (세부 직무 화면 열릴 때) ===== */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
