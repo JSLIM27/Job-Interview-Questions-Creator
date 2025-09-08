@@ -31,9 +31,25 @@ body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-s
 .badge small{opacity:.9}
 
 /* 히어로 */
-.hero{max-width:920px; margin:28px auto 8px auto; padding:0 16px; text-align:center}
-.hero h1{font-size:32px; margin:8px 0}
-.hero__sub{color:var(--muted); margin:0}
+.hero {
+  min-height: 100vh;          /* 브라우저 높이 전체 */
+  display: flex;              /* 세로 중앙 정렬 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin: 8px 0;
+}
+
+.hero__sub {
+  color: var(--muted);
+  margin: 0;
+}
 
 /* 메인 카드 */
 .cards{
@@ -82,3 +98,4 @@ button.secondary{background:#fff; border:1px solid var(--line); padding:10px 14p
 @media (max-width:840px){
   .cards{grid-template-columns:1fr}
 }
+
