@@ -43,7 +43,7 @@ body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans KR",sans-s
 .notice{color:var(--muted);margin-top:8px}
 
 /* 패널(세부/결과) */
-.panel.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px rgba(2,8,20,.06);padding:24px 0;width:100%}
+.panel.card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 8px 24px rgba(2,8,20,.06);padding:24px 0;width:100%;max-width:1200px;margin:0 auto;}
 .panel__header{position:relative;display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:8px}
 .back{position:absolute;left:24px;color:#4f6ef7;text-decoration:none}
 h2{margin:6px 0 12px}
@@ -71,4 +71,9 @@ button.secondary{background:#fff;border:1px solid var(--line);padding:10px 14px;
   .hero h1{font-size:32px}
   .back{position:static;margin-right:auto}
   .panel__header{justify-content:flex-start}
+}
+
+/* 질문은 줄바꿈하지 않고 한 줄로 */
+.q-title{
+  white-space: nowrap;
 }
