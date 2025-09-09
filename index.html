@@ -25,68 +25,64 @@
     </div>
   </div>
 
-  <!-- 히어로: 화면 가득 + 중앙정렬 -->
-  <header class="hero">
-    <div class="container">
+  <!-- 섹션 1: 메인(히어로) -->
+  <section id="home" class="section active">
+    <div class="container hero">
       <h1>어떤 면접 질문이 필요하신가요?</h1>
       <p class="hero__sub">Structured Interview를 위한 면접 질문을 생성합니다.</p>
 
-      <!-- 큰 카드 2개 -->
       <section class="cards">
         <button id="chooseJob" class="bigCard">
           <div class="bigCard__icon">
-            <img src="img/icon-job.png" alt="직무 아이콘" onerror="this.style.display='none'">
+            <img src="img/icon-job.png" alt="" onerror="this.style.display='none'">
           </div>
           <h3>직무 역량</h3>
           <p class="muted">전문성과 기술적 깊이를 검증하는 질문</p>
-          <ul class="checks">
-            <li>IT/프로덕트 (여러 직무)</li>
-            <li>비즈니스/마케팅</li>
-            <li>경영지원/운영</li>
-          </ul>
+          <ul class="checks"><li>IT/프로덕트</li><li>비즈니스/마케팅</li><li>경영지원/운영</li></ul>
         </button>
 
         <button id="chooseCulture" class="bigCard">
           <div class="bigCard__icon alt">
-            <img src="img/icon-culture.png" alt="컬처 아이콘" onerror="this.style.display='none'">
+            <img src="img/icon-culture.png" alt="" onerror="this.style.display='none'">
           </div>
           <h3>컬처핏</h3>
           <p class="muted">조직 문화 적합성과 핵심 가치를 검증하는 질문</p>
-          <ul class="checks purple">
-            <li>주도성 / 주인의식</li>
-            <li>협업 / 팀워크</li>
-            <li>성장 / 학습 등 핵심 키워드</li>
-          </ul>
+          <ul class="checks purple"><li>주도성/오너십</li><li>협업/팀워크</li><li>성장/학습</li></ul>
         </button>
       </section>
 
       <p class="notice">민감/차별 가능 질문 금지: 가족·출신·혼인/임신·정치·종교·건강·장애 등</p>
     </div>
-  </header>
+  </section>
 
-  <!-- 세부 선택 & 결과 화면 (전환 대상) -->
-  <main>
-    <section id="step1" class="panel card" hidden>
-      <div class="container">
-        <h2>세부 항목을 선택하세요</h2>
-        <div class="tabs"><!-- 숨김(디자인용) --></div>
-        <div id="options" class="options"></div>
+  <!-- 섹션 2: 세부 선택 -->
+  <section id="picker" class="section">
+    <div class="container panel card">
+      <div class="panel__header">
+        <a href="#" id="backToHome" class="back">&#8592; 이전으로</a>
+        <h2 id="pickerTitle">직무를 선택해주세요</h2>
       </div>
-    </section>
+      <div id="options" class="options"></div>
+    </div>
+  </section>
 
-    <section id="step2" class="panel card" hidden>
-      <div class="container">
+  <!-- 섹션 3: 질문 결과 -->
+  <section id="result" class="section">
+    <div class="container panel card">
+      <div class="panel__header">
+        <a href="#" id="backToPicker" class="back">&#8592; 목록으로</a>
         <h2>질문 세트</h2>
-        <ol id="questionList"></ol>
-        <div class="actions">
-          <button id="copyBtn">복사하기</button>
-          <button id="printBtn">PDF로 저장</button>
-          <button id="againBtn" class="secondary">처음으로</button>
-        </div>
       </div>
-    </section>
-  </main>
+      <ol id="questionList"></ol>
+      <div class="actions">
+        <button id="copyBtn">복사하기</button>
+        <button id="printBtn">PDF로 저장</button>
+        <button id="againBtn" class="secondary">처음으로</button>
+      </div>
+    </div>
+  </section>
 
-  <script src="script.js?v=4"></script>
+  <!-- 캐시 무시용 버전 파라미터 -->
+  <script src="script.js?v=10"></script>
 </body>
 </html>
