@@ -83,3 +83,8 @@ button.secondary{background:#fff;border:1px solid var(--line);padding:10px 14px;
   padding-left: 12px;   /* 왼쪽 여백 */
   margin-bottom: 12px;  /* 질문 간격 */
 }
+
+#questionList {
+  list-style: none;   /* 자동 번호 제거 */
+  padding-left: 0;    /* 왼쪽 들여쓰기 제거 */
+}
